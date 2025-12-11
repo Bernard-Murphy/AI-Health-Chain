@@ -1,8 +1,17 @@
 # AI Health Chains Assessment (Lead MERN Stack Developer Position)
 
-## Summary
+## Scripts Reference
 
-This is a summary of what I did. I can go into more details if you would like.
+| Command                        | Description                                |
+| ------------------------------ | ------------------------------------------ |
+| `npm start`                    | Start development server                   |
+| `npm run build`                | Create production build                    |
+| `npm test`                     | Run tests in watch mode                    |
+| `npm test -- --watchAll=false` | Run tests once                             |
+| `npm test -- --coverage`       | Run tests with coverage report             |
+| `npm run eject`                | Eject from Create React App (irreversible) |
+
+## Summary
 
 ### PatientList
 
