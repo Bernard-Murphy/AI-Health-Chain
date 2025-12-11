@@ -1,0 +1,33 @@
+.animated-button {
+  position: relative;
+  overflow: hidden;
+  transition-duration: 200ms;
+  transition-property: all;
+}
+
+.button-pressing {
+  transform: scale(0.9) !important;
+}
+
+.ripple {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple-animation 0.6s ease-out forwards;
+  pointer-events: none;
+  opacity: 1;
+}
+
+@keyframes ripple-animation {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+  }
+}

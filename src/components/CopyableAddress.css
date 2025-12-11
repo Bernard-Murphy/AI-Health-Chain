@@ -1,0 +1,138 @@
+.copyable-address {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(102, 126, 234, 0.08);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+  color: #667eea;
+  transition: all 0.2s ease;
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+.copyable-address:hover {
+  background: rgba(102, 126, 234, 0.15);
+  border-color: rgba(102, 126, 234, 0.4);
+}
+
+.copyable-address.copied {
+  background: rgba(56, 142, 60, 0.1);
+  border-color: rgba(56, 142, 60, 0.3);
+  color: #388e3c;
+}
+
+.copyable-address-label {
+  font-family: inherit;
+  font-weight: 600;
+  color: #666;
+  margin-right: 0.25rem;
+}
+
+.copyable-address-text {
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.copyable-address-measure {
+  position: absolute;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  white-space: pre;
+  font-family: inherit;
+  font-size: inherit;
+  pointer-events: none;
+}
+
+.copyable-address-icon {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.copyable-address:hover .copyable-address-icon {
+  opacity: 1;
+}
+
+.copyable-address-tooltip {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-family: sans-serif;
+  white-space: nowrap;
+  animation: fadeInOut 2s ease;
+  pointer-events: none;
+}
+
+.copyable-address-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #333;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(5px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  85% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+/* Variants for different contexts */
+.copyable-address.hash {
+  background: rgba(153, 153, 153, 0.1);
+  border-color: rgba(153, 153, 153, 0.2);
+  color: #666;
+}
+
+.copyable-address.hash:hover {
+  background: rgba(153, 153, 153, 0.15);
+  border-color: rgba(153, 153, 153, 0.4);
+}
+
+.copyable-address.hash.copied {
+  background: rgba(56, 142, 60, 0.1);
+  border-color: rgba(56, 142, 60, 0.3);
+  color: #388e3c;
+}
+
+.copyable-address.small {
+  padding: 0.15rem 0.35rem;
+  font-size: 0.8rem;
+}
+
+.copyable-address.small .copyable-address-icon {
+  font-size: 0.65rem;
+}
